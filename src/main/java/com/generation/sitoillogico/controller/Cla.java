@@ -78,5 +78,4 @@ public class Cla
 
         return "desolazione";
     }
-    //ciao
 }
