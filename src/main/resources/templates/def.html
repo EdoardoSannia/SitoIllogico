@@ -15,7 +15,7 @@
             <p class="card-text"><strong>B: </strong><span th:text="${qualcosa.b}"></span></p>
             <p class="card-text"><strong>Enumeratore: </strong><span th:text="${qualcosa.c}"></span></p>
             <p class="card-text"><strong>Data: </strong><span th:text="${qualcosa.d}"></span></p>
-            <a href="#" class="card-link">Dettagli</a>
+            <a th:href="@{/dfg(a=${qualcosa.a})}" class="card-link btn btn-primary mt-2">Dettagli e Aggiungi Altro</a>
         </div>
     </div>
     <button class="btn btn-primary mt-2 ms-2"

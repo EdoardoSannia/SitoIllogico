@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="col-md-9">
+    <div class="card rounded mb-3">
+        <div class="card-body">
+            <h5 class="card-title"><strong>ID: </strong><span th:text="${idQualcosa.a}"></span></h5>
+            <p class="card-text"><strong>B: </strong><span th:text="${idQualcosa.b}"></span></p>
+            <p class="card-text"><strong>Enumeratore: </strong><span th:text="${idQualcosa.c}"></span></p>
+            <p class="card-text"><strong>Data: </strong><span th:text="${idQualcosa.d}"></span></p>
+            <button class="btn btn-primary mt-2" onclick="hideShow()">Dettagli</button>
+        </div>
+    </div>
+</div>
+<div class="col-md-9" id="myDiv">
+    <div th:each="altri: ${idQualcosa.altri}" class="card rounded mb-3">
+        <div class="card-body">
+            <h5 class="card-title"><strong>ID: </strong><span th:text="${altri.e}"></span></h5>
+            <p class="card-text"><strong>B: </strong><span th:text="${altri.f}"></span></p>
+            <script>
+                function hideShow() {
+                    const x = document.getElementById("myDiv");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</div>
+
+<div th:if="${utente != null}">
+    <form method="POST" action="/dfg">
+
+        <div class="mb-3">
+            <input type="hidden" th:value="${idQualcosa.a}" name="a">
+            <label for="f" class="form-label">F</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="f"
+                    name="f"
+                    placeholder="String"
+                    required="required"
+            />
+        </div>
+        <div class="submit-group">
+            <button type="submit" class="btn btn-primary ms-2" href="/" onclick="myFunction()">Invia</button>
+        </div>
+
+        <script>
+            function myFunction() {
+                alert("Aggiunto Altro");
+            }
+        </script>
+
+    </form>
+</div>
+<button class="btn btn-primary mt-2 ms-2"
+        type="button"
+        onclick="window.location.href='/'">Home
+</button>
+<button class="btn btn-primary mt-2 ms-2"
+        type="button"
+        onclick="window.location.href='/qwe'">Torna Qualcosa
+</button>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+</body>
+</html>

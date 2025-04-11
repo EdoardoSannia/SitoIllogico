@@ -32,17 +32,30 @@
     </div>
     <div class="mb-3">
         <label for="Date" class="form-label">String</label>
-        <input type="date" class="form-control" name="d" id="Date" aria-describedby="emailHelp">
+        <input type="date" class="form-control" name="d" id="Date">
     </div>
     <div class="submit-group">
-        <button type="submit" class="btn btn-primary ms-2" href="/qwe">Invia</button>
+        <div class="submit-group">
+            <button class="btn btn-primary mt-2 ms-2"
+                    type="submit"
+                    onclick="handleButtonClick()">Invia
+            </button>
+            <button class="btn btn-primary mt-2 ms-2"
+                    type="button"
+                    onclick="window.location.href='/'">Home
+            </button>
+            <script>
+                    function myFunction() {
+                    alert("AGGIUNTO QUALCOSA");
+                }
+
+                function handleButtonClick() {
+                    myFunction();
+                    window.location.href = "/qwe";
+                }
+            </script>
+        </div>
     </div>
-
-    <button class="btn btn-primary mt-2 ms-2"
-            type="button"
-            onclick="window.location.href='/'">Home
-    </button>
-
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 

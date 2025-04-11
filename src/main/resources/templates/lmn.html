@@ -12,7 +12,17 @@
 <button class="btn btn-primary btn-lg"
         style="font-size: 15em; padding: 253px 330px"
         type="button"
-        onclick="window.location.href='/DESTRUCTION'">DISTUGGI
+        onclick=handleButtonClick()>DISTUGGI
+    <script>
+        function myFunction() {
+            alert("DISTRUTTO TUTTOOOOOOOOOOO");
+        }
+
+        function handleButtonClick() {
+            myFunction();
+            window.location.href = "/DESTRUCTION";
+        }
+    </script>
 </button>
 </div>
 
